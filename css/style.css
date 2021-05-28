@@ -111,6 +111,13 @@ img {
   border-radius: 15px;
 }
 
+/* ASIGNED BY JS ONLY */
 .hidden {
   display: none;
+}
+
+.player--winner {
+  background: #2f2f2f;
+  opacity: 1;
+  color: #c7365f;
 }
