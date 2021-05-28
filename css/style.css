@@ -104,4 +104,9 @@ img {
   color: #313131;
   background: rgba(255, 255, 255, 0.582);
   font-weight: 900;
+  border-radius: 15px;
+}
+
+.hidden {
+  display: none;
 }
