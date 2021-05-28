@@ -34,6 +34,10 @@ h1 {
   font-size: 3.5rem;
 }
 
+.player {
+  transition: all 1s;
+}
+
 .total-score p {
   font-family: "Mukta", sans-serif;
   font-weight: lighter;
