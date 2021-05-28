@@ -16,16 +16,29 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #313131;
 }
 
 main {
   position: relative;
-  width: 800px;
+  width: 1000px;
   height: 600px;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255, 0.35);
   border-radius: 15px;
+}
+
+h1 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 3.5rem;
+}
+
+.total-score p {
+  font-family: "Mukta", sans-serif;
+  font-weight: 900;
+  font-size: 5rem;
+  color: #c7365f;
 }
 
 section {
@@ -42,6 +55,18 @@ button {
   position: absolute;
 }
 
+button {
+  border: transparent;
+  width: 200px;
+  border-radius: 25px;
+  font-weight: 900;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+}
+
 img {
   top: 150px;
 }
@@ -51,16 +76,24 @@ img {
 }
 
 .btn--roll {
-  top: 450px;
+  top: 400px;
 }
 
 .btn--hold {
-  top: 500px;
+  top: 470px;
 }
 
 .current {
   background: #c7365f;
   margin: 0 auto;
-  width: 150px;
-  height: 80px;
+  width: 200px;
+  height: 130px;
+  border-radius: 9px;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  color: white;
+  font-size: 2rem;
+  font-family: "Quicksand", sans-serif;
 }
