@@ -32,27 +32,70 @@
   </head>
   <body>
     <main>
-      <!-- PLAYER ONE
+      <!-- STARTER LAYOUT 
     ============================================================================== -->
       <header>
+        <!-- TITLE : -->
         <h1>WELCOME TO PIGGY GAME!</h1>
+
+        <!-- BUTTONS : -->
         <div>
           <div>
+            <!-- PLAYING BUTTONS -->
             <button class="start">
-              <i class="fas fa-dice"></i> START PLAYING
+              <i class="fas fa-dice"></i>
+              <p>START PLAYING</p>
             </button>
+
+            <!-- EASY -->
             <button class="btn-1 diff hide">EASY</button>
+            <div class="hide">
+              <h3>Easy Game Rules</h3>
+              <p>
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Possimus, iusto.
+              </p>
+            </div>
+
+            <!-- MEDIUM -->
             <button class="btn-2 diff hide">NORMAL</button>
+            <div class="hide">
+              <h3>Medium Game Rules</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ducimus, officia.
+              </p>
+            </div>
+            <!-- HARD -->
             <button class="btn-3 diff hide">HARD</button>
+            <div class="hide">
+              <h3>Hard Game Rules</h3>
+              <p>
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                Ducimus, officia.
+              </p>
+            </div>
           </div>
-          <button id="rules">RULES</button>
-          <button id="credits">CREDITS</button>
-          <div class="hide" id="return">
+
+          <!-- REST OF THE BUTTONS -->
+          <button id="rules">
+            <i class="fas fa-book"></i>
+            <p>RULES</p>
+          </button>
+          <button id="credits">
+            <i class="far fa-lightbulb"></i>
+            <p>CREDITS</p>
+          </button>
+
+          <!-- RETURN BUTTON -->
+          <div class="hide return" id="return">
             <i class="fas fa-reply"></i>
           </div>
         </div>
       </header>
 
+      <!-- PLAYER ONE
+    ============================================================================== -->
       <section class="player player--1 player--active none--display">
         <div class="total-score">
           <h2 class="name" id="name--1">Player One</h2>

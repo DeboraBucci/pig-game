@@ -15,17 +15,35 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+const easy = document.querySelector(".btn-1");
+const medium = document.querySelector(".btn-2");
+const hard = document.querySelector(".btn-3");
+
+const returnBtn = document.querySelector("#return");
+
+const rulesBtn = document.querySelector("#rules");
+const creditsBtn = document.querySelector("#credits");
+
+// HIDE OR SHOW :
+const hideShow = function () {
+  easy.classList.toggle("hide");
+  medium.classList.toggle("hide");
+  hard.classList.toggle("hide");
+
+  returnBtn.classList.toggle("hide");
+
+  document.querySelector("#rules").classList.toggle("hide");
+  document.querySelector("#credits").classList.toggle("hide");
+};
+
 // START BUTTON
-document.querySelector(".start").addEventListener("click", function () {
-  document.querySelector(".btn-1").classList.remove("hide");
-  document.querySelector(".btn-2").classList.remove("hide");
-  document.querySelector(".btn-3").classList.remove("hide");
+document.querySelector(".start").addEventListener("click", hideShow);
 
-  document.querySelector("#return").classList.remove("hide");
+// RETURN BUTTON :
+document.querySelector("#return").addEventListener("click", hideShow);
 
-  document.querySelector("#rules").classList.add("hide");
-  document.querySelector("#credits").classList.add("hide");
-});
+// GAME FUNCTIONALITY
+//////////////////////////////////////////////////////////////////////////////////////
 
 // STARTING CONDITIONS :
 const scores = ["", 0, 0];
