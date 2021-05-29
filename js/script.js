@@ -15,28 +15,55 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
-// VARIABLES :
-const scores = ["", 0, 0];
-
-let playing = true;
-let currentScore = 0;
-let activePlayer = 1;
-
 // STARTING CONDITIONS :
-scoreOne.textContent = 0;
-scoreTwo.textContent = 0;
-diceEl.classList.add("hidden");
+const scores = ["", 0, 0];
+let playing, currentScore, activePlayer;
 
-// PLAYERS NAME :
-const playerOnePromp = prompt("Player One Name :");
-const playerTwoPromp = prompt("Player Two Name :");
+const init = function () {
+  scores[1] = 0;
+  scores[2] = 0;
 
-document.querySelector("#name--1").textContent = playerOnePromp
-  ? playerOnePromp
-  : "Player One";
-document.querySelector("#name--2").textContent = playerTwoPromp
-  ? playerTwoPromp
-  : "Player Two";
+  currentScore = 0;
+
+  playing = true;
+
+  activePlayer = 1;
+
+  // SCORES BACK TO CERO :
+  scoreOne.textContent = 0;
+  scoreTwo.textContent = 0;
+
+  currentOne.textContent = 0;
+  currentTwo.textContent = 0;
+
+  // HIDDEN DICE :
+  diceEl.classList.add("hidden");
+
+  // REMOVE WINNER FEATURES :
+  playerOne.classList.remove("player--winner");
+  playerTwo.classList.remove("player--winner");
+
+  playerOne.classList.add("player--active");
+  playerTwo.classList.remove("player--active");
+
+  btnHold.classList.remove("buttons--winner");
+  btnRoll.classList.remove("buttons--winner");
+
+  btnRoll.classList.add("btn");
+  btnHold.classList.add("btn");
+
+  // PLAYERS NAME :
+  const playerOnePromp = prompt("Player One Name :");
+  const playerTwoPromp = prompt("Player Two Name :");
+
+  document.querySelector("#name--1").textContent = playerOnePromp
+    ? playerOnePromp
+    : "Player One";
+  document.querySelector("#name--2").textContent = playerTwoPromp
+    ? playerTwoPromp
+    : "Player Two";
+};
+init();
 
 // SWITCH PLAYERS FUNCTION :
 const switchPlayers = function () {
@@ -74,7 +101,6 @@ btnRoll.addEventListener("click", function () {
 });
 
 // HOLD SCORE :
-
 btnHold.addEventListener("click", function () {
   if (playing) {
     // Add current score to active player's score :
@@ -107,3 +133,6 @@ btnHold.addEventListener("click", function () {
     }
   }
 });
+
+// NEW GAME :
+btnNew.addEventListener("click", init);
