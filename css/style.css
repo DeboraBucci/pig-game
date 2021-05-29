@@ -38,10 +38,6 @@ h2 {
   display: none;
 }
 
-header buttons {
-  transition: all 2s;
-}
-
 .player {
   transition: all 1s;
 }
@@ -185,4 +181,28 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-family: "Poppins", sans-serif;
+  background-color: transparent;
+  background-image: linear-gradient(120deg, #753682, #c7365f);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+header button {
+  opacity: 0.7;
+  width: 350px;
+  margin: 20px auto;
+}
+
+.diff {
+  width: 200px;
+  background: rgb(37, 37, 37);
+  color: #c7365f;
 }
