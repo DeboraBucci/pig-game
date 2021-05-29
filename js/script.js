@@ -28,8 +28,14 @@ const creditsBtn = document.querySelector("#credits");
 
 const btnsRules = document.querySelectorAll(".diff");
 const clAll = document.querySelectorAll(".rules");
+const playBtns = document.querySelectorAll(".play");
 
 const closeRules = document.querySelectorAll(".close");
+
+const title = document.querySelector(".title");
+
+const scores = ["", 0, 0];
+let playing, currentScore, activePlayer;
 
 // HIDE OR SHOW :
 const hideShow = function () {
@@ -62,7 +68,7 @@ for (let i = 0; i < btnsRules.length; i++) {
     startBtn.classList.add("hide");
     returnBtn.classList.add("hide");
 
-    document.querySelector(".title").textContent = `${
+    title.textContent = `${
       ruleName[0].toUpperCase() + ruleName.slice(1) + " Gameplay"
     }`;
   });
@@ -84,13 +90,27 @@ for (let x = 0; x < closeRules.length; x++) {
     document.querySelector(".title").textContent = "WELCOME TO PIGGY GAME!";
   });
 }
+
+// PLAY
+for (let p = 0; p < playBtns.length; p++) {
+  playBtns[p].addEventListener("click", function () {
+    playing = true;
+
+    document.querySelector(".header").classList.add("hide");
+
+    playerOne.classList.remove("none--display");
+    playerTwo.classList.remove("none--display");
+
+    btnNew.classList.remove("none--display");
+    btnHold.classList.remove("none--display");
+    btnRoll.classList.remove("none--display");
+  });
+}
+
 // GAME FUNCTIONALITY
 //////////////////////////////////////////////////////////////////////////////////////
 
 // STARTING CONDITIONS :
-const scores = ["", 0, 0];
-let playing, currentScore, activePlayer;
-playing = false;
 
 const init = function () {
   scores[1] = 0;

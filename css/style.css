@@ -89,16 +89,19 @@ i {
 }
 
 .btn--new {
+  position: absolute;
   top: 50px;
   width: 200px;
 }
 
 .btn--roll {
+  position: absolute;
   top: 400px;
   width: 160px;
 }
 
 .btn--hold {
+  position: absolute;
   top: 470px;
   width: 150px;
 }
