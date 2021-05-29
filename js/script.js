@@ -27,6 +27,17 @@ scoreOne.textContent = 0;
 scoreTwo.textContent = 0;
 diceEl.classList.add("hidden");
 
+// PLAYERS NAME :
+const playerOnePromp = prompt("Player One Name :");
+const playerTwoPromp = prompt("Player Two Name :");
+
+document.querySelector("#name--1").textContent = playerOnePromp
+  ? playerOnePromp
+  : "Player One";
+document.querySelector("#name--2").textContent = playerTwoPromp
+  ? playerTwoPromp
+  : "Player Two";
+
 // SWITCH PLAYERS FUNCTION :
 const switchPlayers = function () {
   currentScore = 0;
@@ -80,6 +91,14 @@ btnHold.addEventListener("click", function () {
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.remove("player--active");
+
+      btnHold.classList.add("buttons--winner");
+      btnRoll.classList.add("buttons--winner");
+
+      btnRoll.classList.remove("btn");
+      btnHold.classList.remove("btn");
+
+      diceEl.classList.add("hidden");
 
       playing = false;
     } else {

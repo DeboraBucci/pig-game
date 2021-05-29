@@ -25,7 +25,7 @@ main {
   height: 600px;
   display: flex;
   justify-content: center;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(218, 218, 218, 0.6);
   border-radius: 15px;
 }
 
@@ -46,13 +46,16 @@ h1 {
 }
 
 section {
-  opacity: 0.5;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
   padding: 100px 0;
+}
+
+section * {
+  opacity: 0.7;
 }
 
 img,
@@ -62,30 +65,51 @@ button {
 
 button {
   border: transparent;
-  width: 200px;
   border-radius: 25px;
-  font-weight: 900;
-  padding: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding: 10px;
   font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.btn {
+  box-shadow: 0 0 15px grey;
+  text-shadow: 3px 3px 10px grey;
+  opacity: 0.9;
 }
 
 img {
-  top: 150px;
+  top: 160px;
+}
+
+i {
+  color: #c7365f;
 }
 
 .btn--new {
   top: 50px;
+  width: 200px;
 }
 
 .btn--roll {
   top: 400px;
+  width: 160px;
 }
 
 .btn--hold {
   top: 470px;
+  width: 150px;
+}
+
+button:hover,
+button:active {
+  background: rgb(56, 56, 56);
+  color: white;
+  text-shadow: none;
+  box-shadow: none;
+  transform: scale(1.2);
 }
 
 .current {
@@ -111,6 +135,10 @@ img {
   border-radius: 15px;
 }
 
+.player--active * {
+  opacity: 1;
+}
+
 /* ASIGNED BY JS ONLY */
 .hidden {
   display: none;
@@ -120,4 +148,21 @@ img {
   background: #2f2f2f;
   opacity: 1;
   color: #c7365f;
+  border-radius: 15px;
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.buttons--winner {
+  color: rgb(56, 56, 56);
+  background: rgb(77, 77, 77);
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.buttons--winner:hover,
+.buttons--winner:active {
+  transform: none;
+  color: rgb(56, 56, 56);
+  background: rgb(77, 77, 77);
 }
