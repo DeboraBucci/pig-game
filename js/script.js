@@ -26,6 +26,11 @@ const returnBtn = document.querySelector("#return");
 const rulesBtn = document.querySelector("#rules");
 const creditsBtn = document.querySelector("#credits");
 
+const btnsRules = document.querySelectorAll(".diff");
+const clAll = document.querySelectorAll(".rules");
+
+const closeRules = document.querySelectorAll(".close");
+
 // HIDE OR SHOW :
 const hideShow = function () {
   easy.classList.toggle("hide");
@@ -44,50 +49,41 @@ document.querySelector(".start").addEventListener("click", hideShow);
 // RETURN BUTTON :
 document.querySelector("#return").addEventListener("click", hideShow);
 
-// EASY RULES :
-easy.addEventListener("click", function () {
-  document.querySelector(".easy-rules").classList.remove("hide");
+// OPEN EVERY RULE :
+for (let i = 0; i < btnsRules.length; i++) {
+  const ruleName = btnsRules[i].textContent.toLowerCase().trim();
 
-  medium.classList.add("hide");
-  hard.classList.add("hide");
-  easy.classList.add("hide");
+  btnsRules[i].addEventListener("click", function () {
+    document.querySelector(`.${ruleName}-rules`).classList.remove("hide");
 
-  startBtn.classList.add("hide");
+    medium.classList.add("hide");
+    hard.classList.add("hide");
+    easy.classList.add("hide");
+    startBtn.classList.add("hide");
+    returnBtn.classList.add("hide");
 
-  returnBtn.classList.add("hide");
+    document.querySelector(".title").textContent = `${
+      ruleName[0].toUpperCase() + ruleName.slice(1) + " Gameplay"
+    }`;
+  });
+}
 
-  document.querySelector(".title").textContent = "Easy Game";
-});
+// CLOSE EVERY RULE :
+for (let x = 0; x < closeRules.length; x++) {
+  closeRules[x].addEventListener("click", function () {
+    for (let y = 0; y < clAll.length; y++) {
+      clAll[y].classList.add("hide");
+    }
 
-// MEDIUM RULES :
-medium.addEventListener("click", function () {
-  document.querySelector(".medium-rules").classList.remove("hide");
+    medium.classList.remove("hide");
+    hard.classList.remove("hide");
+    easy.classList.remove("hide");
+    startBtn.classList.remove("hide");
+    returnBtn.classList.remove("hide");
 
-  medium.classList.add("hide");
-  hard.classList.add("hide");
-  easy.classList.add("hide");
-
-  startBtn.classList.add("hide");
-
-  returnBtn.classList.add("hide");
-
-  document.querySelector(".title").textContent = "Medium Game";
-});
-
-// HARD RULES :
-hard.addEventListener("click", function () {
-  document.querySelector(".hard-rules").classList.remove("hide");
-
-  hard.classList.add("hide");
-  hard.classList.add("hide");
-  easy.classList.add("hide");
-
-  startBtn.classList.add("hide");
-
-  returnBtn.classList.add("hide");
-
-  document.querySelector(".title").textContent = "Hard Game";
-});
+    document.querySelector(".title").textContent = "WELCOME TO PIGGY GAME!";
+  });
+}
 // GAME FUNCTIONALITY
 //////////////////////////////////////////////////////////////////////////////////////
 
