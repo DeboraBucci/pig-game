@@ -15,6 +15,8 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+const startBtn = document.querySelector(".start");
+
 const easy = document.querySelector(".btn-1");
 const medium = document.querySelector(".btn-2");
 const hard = document.querySelector(".btn-3");
@@ -42,6 +44,50 @@ document.querySelector(".start").addEventListener("click", hideShow);
 // RETURN BUTTON :
 document.querySelector("#return").addEventListener("click", hideShow);
 
+// EASY RULES :
+easy.addEventListener("click", function () {
+  document.querySelector(".easy-rules").classList.remove("hide");
+
+  medium.classList.add("hide");
+  hard.classList.add("hide");
+  easy.classList.add("hide");
+
+  startBtn.classList.add("hide");
+
+  returnBtn.classList.add("hide");
+
+  document.querySelector(".title").textContent = "Easy Game";
+});
+
+// MEDIUM RULES :
+medium.addEventListener("click", function () {
+  document.querySelector(".medium-rules").classList.remove("hide");
+
+  medium.classList.add("hide");
+  hard.classList.add("hide");
+  easy.classList.add("hide");
+
+  startBtn.classList.add("hide");
+
+  returnBtn.classList.add("hide");
+
+  document.querySelector(".title").textContent = "Medium Game";
+});
+
+// HARD RULES :
+hard.addEventListener("click", function () {
+  document.querySelector(".hard-rules").classList.remove("hide");
+
+  hard.classList.add("hide");
+  hard.classList.add("hide");
+  easy.classList.add("hide");
+
+  startBtn.classList.add("hide");
+
+  returnBtn.classList.add("hide");
+
+  document.querySelector(".title").textContent = "Hard Game";
+});
 // GAME FUNCTIONALITY
 //////////////////////////////////////////////////////////////////////////////////////
 
