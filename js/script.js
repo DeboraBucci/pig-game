@@ -15,17 +15,28 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+// START BUTTON
+document.querySelector(".start").addEventListener("click", function () {
+  document.querySelector(".btn-1").classList.remove("hide");
+  document.querySelector(".btn-2").classList.remove("hide");
+  document.querySelector(".btn-3").classList.remove("hide");
+
+  document.querySelector("#return").classList.remove("hide");
+
+  document.querySelector("#rules").classList.add("hide");
+  document.querySelector("#credits").classList.add("hide");
+});
+
 // STARTING CONDITIONS :
 const scores = ["", 0, 0];
 let playing, currentScore, activePlayer;
+playing = false;
 
 const init = function () {
   scores[1] = 0;
   scores[2] = 0;
 
   currentScore = 0;
-
-  playing = true;
 
   activePlayer = 1;
 
@@ -56,15 +67,17 @@ init();
 
 // PLAYERS NAME :
 const newNames = function () {
-  const playerOnePromp = prompt("Player One Name :");
-  const playerTwoPromp = prompt("Player Two Name :");
+  if (playing) {
+    const playerOnePromp = prompt("Player One Name :");
+    const playerTwoPromp = prompt("Player Two Name :");
 
-  document.querySelector("#name--1").textContent = playerOnePromp
-    ? playerOnePromp
-    : "Player One";
-  document.querySelector("#name--2").textContent = playerTwoPromp
-    ? playerTwoPromp
-    : "Player Two";
+    document.querySelector("#name--1").textContent = playerOnePromp
+      ? playerOnePromp
+      : "Player One";
+    document.querySelector("#name--2").textContent = playerTwoPromp
+      ? playerTwoPromp
+      : "Player Two";
+  }
 };
 newNames();
 

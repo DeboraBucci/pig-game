@@ -29,9 +29,17 @@ main {
   border-radius: 15px;
 }
 
-h1 {
+h2 {
   font-family: "Bebas Neue", cursive;
   font-size: 3.5rem;
+}
+
+.hide {
+  display: none;
+}
+
+header buttons {
+  transition: all 2s;
 }
 
 .player {
@@ -59,7 +67,7 @@ section * {
 }
 
 img,
-button {
+.btn {
   position: absolute;
 }
 
@@ -165,4 +173,16 @@ button:active {
   transform: none;
   color: rgb(56, 56, 56);
   background: rgb(77, 77, 77);
+}
+
+.none--display {
+  display: none;
+}
+
+/* INITIAL BUTTONS */
+header {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
