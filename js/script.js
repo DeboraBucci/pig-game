@@ -51,8 +51,11 @@ const init = function () {
 
   btnRoll.classList.add("btn");
   btnHold.classList.add("btn");
+};
+init();
 
-  // PLAYERS NAME :
+// PLAYERS NAME :
+const newNames = function () {
   const playerOnePromp = prompt("Player One Name :");
   const playerTwoPromp = prompt("Player Two Name :");
 
@@ -63,7 +66,7 @@ const init = function () {
     ? playerTwoPromp
     : "Player Two";
 };
-init();
+newNames();
 
 // SWITCH PLAYERS FUNCTION :
 const switchPlayers = function () {
@@ -135,4 +138,18 @@ btnHold.addEventListener("click", function () {
 });
 
 // NEW GAME :
-btnNew.addEventListener("click", init);
+btnNew.addEventListener("click", function () {
+  // PROMPT "WANT TO KEEP NAMES?"
+  const keepNames = prompt(
+    "WANT TO KEEP NAMES?\n Y/yes to keep them."
+  ).toUpperCase();
+
+  const i = keepNames.includes("Y") || keepNames.includes("YES") ? true : false;
+
+  // IF i FALSE, THEN NEW NAMES FUNCTION STARTS :
+  if (!i) {
+    newNames();
+  }
+
+  init();
+});
