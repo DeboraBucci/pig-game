@@ -14,7 +14,12 @@ h4 {
   font-size: 2rem;
 }
 
-.credits-div {
+h5 {
+  font-size: 1.7rem;
+}
+
+.credits-div,
+.rules-div {
   font-family: "Poppins", sans-serif;
   font-size: 1.3rem;
   font-weight: 900;

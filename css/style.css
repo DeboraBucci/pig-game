@@ -232,3 +232,17 @@ h4 {
 }
 
 /* RULES */
+.rules-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 55vh;
+  width: 85vw;
+}
+
+.rules-content {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
