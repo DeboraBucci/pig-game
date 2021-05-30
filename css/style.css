@@ -123,15 +123,18 @@ img {
 }
 
 /* BUTTONS */
-.btn,
-.btn--new,
-.btn--roll,
-.btn--hold {
+.btn {
   position: absolute;
 }
 
 .btn--new {
-  top: 50px;
+  top: 60px;
+  width: 200px;
+}
+
+.btn--home {
+  top: 7px;
+  padding: 7px 10px;
   width: 200px;
 }
 

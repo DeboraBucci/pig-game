@@ -12,6 +12,7 @@ const currentOne = document.getElementById("current--1");
 const currentTwo = document.getElementById("current--2");
 
 const diceEl = document.querySelector(".dice");
+const btnHome = document.querySelector(".btn--home");
 const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
@@ -116,6 +117,7 @@ for (let p = 0; p < playBtns.length; p++) {
     playerOne.classList.remove("hide");
     playerTwo.classList.remove("hide");
 
+    btnHome.classList.remove("hide");
     btnNew.classList.remove("hide");
     btnHold.classList.remove("hide");
     btnRoll.classList.remove("hide");
@@ -127,8 +129,10 @@ for (let p = 0; p < playBtns.length; p++) {
 const goalFunc = function () {
   if (arrEasy) {
     goal = 20;
+    difficulty = "easy";
   } else if (arrNormal) {
     goal = 50;
+    difficulty = "normal";
   } else if (arrHard) {
     goal = 100;
     difficulty = "hard";
@@ -319,3 +323,28 @@ const openCloseRules = function () {
 rulesBtn.addEventListener("click", openCloseRules);
 
 returnBtn3.addEventListener("click", openCloseRules);
+
+// HOME
+//////////////////////////////////////////////////////////////////////////////////////
+btnHome.addEventListener("click", function () {
+  document.querySelector("header").classList.remove("hide");
+
+  playerOne.classList.add("hide");
+  playerTwo.classList.add("hide");
+
+  btnHome.classList.add("hide");
+  btnNew.classList.add("hide");
+  btnHold.classList.add("hide");
+  btnRoll.classList.add("hide");
+
+  console.log(difficulty);
+
+  document.querySelector(`.${difficulty}-rules`).classList.add("hide");
+
+  startBtn.classList.remove("hide");
+  rulesBtn.classList.remove("hide");
+  creditsBtn.classList.remove("hide");
+  diceEl.classList.add("hide");
+
+  title.textContent = "WELCOME TO PIGGY GAME!";
+});
