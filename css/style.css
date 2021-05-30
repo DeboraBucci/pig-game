@@ -176,6 +176,16 @@ button:active {
   transform: scale(1);
 }
 
+/* CREDITS  */
+.credits-div {
+  min-height: 55vh;
+  min-width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+
 /* HIDE */
 .hide {
   display: none !important;

@@ -23,6 +23,7 @@ const medium = document.querySelector(".btn-2");
 const hard = document.querySelector(".btn-3");
 
 const returnBtn = document.querySelector("#return");
+const returnBtn2 = document.querySelector("#return--2");
 
 const rulesBtn = document.querySelector("#rules");
 const creditsBtn = document.querySelector("#credits");
@@ -224,7 +225,8 @@ btnRoll.addEventListener("click", function () {
   }
 });
 
-// HOLD SCORE :
+// HOLD SCORE
+//////////////////////////////////////////////////////////////////////////////////////
 btnHold.addEventListener("click", function () {
   if (playing) {
     // Add current score to active player's score :
@@ -258,7 +260,8 @@ btnHold.addEventListener("click", function () {
   }
 });
 
-// NEW GAME :
+// NEW GAME
+//////////////////////////////////////////////////////////////////////////////////////
 btnNew.addEventListener("click", function () {
   // PROMPT "WANT TO KEEP NAMES?"
   const keepNames = prompt(
@@ -274,3 +277,20 @@ btnNew.addEventListener("click", function () {
 
   init();
 });
+
+// CREDITS
+//////////////////////////////////////////////////////////////////////////////////////
+const openCloseCredits = function () {
+  creditsBtn.classList.toggle("hide");
+  startBtn.classList.toggle("hide");
+  rulesBtn.classList.toggle("hide");
+  title.classList.toggle("hide");
+
+  returnBtn2.classList.toggle("hide");
+
+  document.querySelector(".credits-div").classList.toggle("hide");
+};
+
+creditsBtn.addEventListener("click", openCloseCredits);
+
+returnBtn2.addEventListener("click", openCloseCredits);
