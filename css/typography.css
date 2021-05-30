@@ -8,6 +8,18 @@ h2 {
   font-family: "Bebas Neue", cursive;
   font-size: 3.5rem;
 }
+
+h4 {
+  font-family: "Quicksand", sans-serif;
+  font-size: 2rem;
+}
+
+.credits-div {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
 .total-score p {
   font-family: "Mukta", sans-serif;
   font-weight: lighter;
