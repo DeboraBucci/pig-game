@@ -1,6 +1,7 @@
 "use strict";
 
-// SELECTING ELEMENTS
+// CONSTANTS AND VARIABLES
+///////////////////////////////////////////////////////////////////////////////////////
 const playerOne = document.querySelector(".player--1");
 const playerTwo = document.querySelector(".player--2");
 
@@ -36,29 +37,31 @@ const title = document.querySelector(".title");
 
 const scores = ["", 0, 0];
 let playing, currentScore, activePlayer;
+let arrEasy, arrNormal, arrHard;
+let currLost, totalLost;
+let goal;
 
-// HIDE OR SHOW :
+// HIDE OR SHOW FUNCTION -- ONLY FOR HEADER --
+///////////////////////////////////////////////////////////////////////////////////////
 const hideShow = function () {
   easy.classList.toggle("hide");
   medium.classList.toggle("hide");
   hard.classList.toggle("hide");
-
   returnBtn.classList.toggle("hide");
-
   document.querySelector("#rules").classList.toggle("hide");
   document.querySelector("#credits").classList.toggle("hide");
 };
 
-// START BUTTON
-document.querySelector(".start").addEventListener("click", function () {
-  hideShow();
-  startBtn.classList.add(".btn--no");
-});
+// START BUTTON -- HEADER --
+///////////////////////////////////////////////////////////////////////////////////////
+document.querySelector(".start").addEventListener("click", hideShow);
 
-// RETURN BUTTON :
+// RETURN BUTTON -- HEADER --
+///////////////////////////////////////////////////////////////////////////////////////
 document.querySelector("#return").addEventListener("click", hideShow);
 
-// OPEN EVERY RULE :
+// OPEN EVERY RULE INSIDE "START PLAYING" -- HEADER --
+///////////////////////////////////////////////////////////////////////////////////////
 for (let i = 0; i < btnsRules.length; i++) {
   const ruleName = btnsRules[i].textContent.toLowerCase().trim();
 
@@ -77,7 +80,8 @@ for (let i = 0; i < btnsRules.length; i++) {
   });
 }
 
-// CLOSE EVERY RULE :
+// CLOSE EVERY RULE INSIDE "START PLAYING" -- HEADER --
+///////////////////////////////////////////////////////////////////////////////////////
 for (let x = 0; x < closeRules.length; x++) {
   closeRules[x].addEventListener("click", function () {
     for (let y = 0; y < clAll.length; y++) {
@@ -95,26 +99,42 @@ for (let x = 0; x < closeRules.length; x++) {
 }
 
 // PLAY
+///////////////////////////////////////////////////////////////////////////////////////
 for (let p = 0; p < playBtns.length; p++) {
   playBtns[p].addEventListener("click", function () {
+    arrEasy = playBtns[p].classList.value.includes("easy-play");
+    arrNormal = playBtns[p].classList.value.includes("normal-play");
+    arrHard = playBtns[p].classList.value.includes("hard-play");
+
     playing = true;
 
-    document.querySelector(".header").classList.add("hide");
+    document.querySelector("header").classList.add("hide");
 
-    playerOne.classList.remove("none--display");
-    playerTwo.classList.remove("none--display");
+    playerOne.classList.remove("hide");
+    playerTwo.classList.remove("hide");
 
-    btnNew.classList.remove("none--display");
-    btnHold.classList.remove("none--display");
-    btnRoll.classList.remove("none--display");
+    btnNew.classList.remove("hide");
+    btnHold.classList.remove("hide");
+    btnRoll.classList.remove("hide");
   });
 }
 
+// DIFFICULTY SELECTION
+//////////////////////////////////////////////////////////////////////////////////////
+const difficultyFunc = function () {
+  if (arrEasy) {
+    goal = 20;
+  } else if (arrNormal) {
+    goal = 50;
+  } else if (arrHard) {
+    goal = 100;
+  }
+  console.log(goal);
+};
+
 // GAME FUNCTIONALITY
 //////////////////////////////////////////////////////////////////////////////////////
-
 // STARTING CONDITIONS :
-
 const init = function () {
   scores[1] = 0;
   scores[2] = 0;
@@ -131,7 +151,7 @@ const init = function () {
   currentTwo.textContent = 0;
 
   // HIDDEN DICE :
-  diceEl.classList.add("hidden");
+  diceEl.classList.add("hide");
 
   // REMOVE WINNER FEATURES :
   playerOne.classList.remove("player--winner");
@@ -148,7 +168,8 @@ const init = function () {
 };
 init();
 
-// PLAYERS NAME :
+// PLAYERS NAME
+//////////////////////////////////////////////////////////////////////////////////////
 const newNames = function () {
   if (playing) {
     const playerOnePromp = prompt("Player One Name :");
@@ -164,7 +185,8 @@ const newNames = function () {
 };
 newNames();
 
-// SWITCH PLAYERS FUNCTION :
+// SWITCH PLAYERS FUNCTION
+//////////////////////////////////////////////////////////////////////////////////////
 const switchPlayers = function () {
   currentScore = 0;
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -175,15 +197,18 @@ const switchPlayers = function () {
   playerTwo.classList.toggle("player--active");
 };
 
-// ROLLING DICE :
+// ROLLING DICE
+//////////////////////////////////////////////////////////////////////////////////////
 btnRoll.addEventListener("click", function () {
+  difficultyFunc();
+
   if (playing) {
     // Generate random number between 1 and 6 :
     let dice = Math.trunc(Math.random() * 6) + 1;
     console.log(dice);
 
     // Display Dice :
-    diceEl.classList.remove("hidden");
+    diceEl.classList.remove("hide");
     diceEl.src = `/images/dice-${dice}.png`;
 
     // CHeck if diceNum === 1 :
@@ -208,7 +233,7 @@ btnHold.addEventListener("click", function () {
       scores[activePlayer];
 
     // Check if player's score is >= 100;
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= goal) {
       // Finish Game
       document
         .querySelector(`.player--${activePlayer}`)
@@ -223,7 +248,7 @@ btnHold.addEventListener("click", function () {
       btnRoll.classList.remove("btn");
       btnHold.classList.remove("btn");
 
-      diceEl.classList.add("hidden");
+      diceEl.classList.add("hide");
 
       playing = false;
     } else {

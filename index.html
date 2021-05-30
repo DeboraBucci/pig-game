@@ -10,6 +10,10 @@
     <!-- CUSTOM STYLE
     ============================================================================== -->
     <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/typography.css" />
+    <link rel="stylesheet" href="./css/media-queries.css" />
+    <link rel="stylesheet" href="./css/js-style.css" />
+    <link rel="stylesheet" href="./css/colors.css" />
 
     <!-- GOOGLE FONTS
     ============================================================================== -->
@@ -34,7 +38,7 @@
     <main>
       <!-- INITIAL LAYOUT :
     ============================================================================== -->
-      <header class="header">
+      <header>
         <!-- TITLE -->
         <h1 class="title">WELCOME TO PIGGY GAME!</h1>
 
@@ -65,28 +69,28 @@
                 points.
               </p>
               <p>This game difficulty is recommended for children!</p>
-              <button class="play">PLAY</button>
+              <button class="play easy-play">PLAY</button>
             </div>
 
-            <!-- MEDIUM ----------------------------------------------------------->
-            <!-- MEDIUM BUTTON -->
+            <!-- NORMAL ----------------------------------------------------------->
+            <!-- NORMAL BUTTON -->
             <button class="btn-2 diff hide">
               <i class="fas fa-hard-hat"></i> NORMAL
             </button>
 
-            <!-- MEDIUM RULES -->
+            <!-- NORMAL RULES -->
             <div class="hide normal-rules rules">
               <div id="close">
                 <button class="close"><i class="fas fa-times"></i></button>
               </div>
-              <h3>Medium Game Rules</h3>
+              <h3>NORMAL Game Rules</h3>
               <p>GOAL POINTS: 50</p>
               <p>
                 If you get dice number one, you'll lose all of your current
                 points.
               </p>
 
-              <button class="play">PLAY</button>
+              <button class="play normal-play">PLAY</button>
             </div>
 
             <!-- HARD ------------------------------------------------------------>
@@ -107,7 +111,7 @@
                 and half your total scores.
               </p>
               <p>Good luck in this one!</p>
-              <button class="play">PLAY</button>
+              <button class="play hard-play">PLAY</button>
             </div>
           </div>
 
@@ -121,7 +125,7 @@
             <p>CREDITS</p>
           </button>
 
-          <!-- RETURN BUTTON ---------------------------------------------------->
+          <!-- RETURN "BUTTON" (ICON) ---------------------------------------------------->
           <div class="hide return" id="return">
             <i class="fas fa-reply"></i>
           </div>
@@ -130,7 +134,7 @@
 
       <!-- PLAYER ONE
       ============================================================================== -->
-      <section class="player player--1 player--active none--display">
+      <section class="player player--1 player--active hide">
         <div class="total-score">
           <!-- PLAYER NAME -->
           <h2 class="name" id="name--1">Player One</h2>
@@ -146,7 +150,7 @@
 
       <!-- PLAYER TWO
       ============================================================================== -->
-      <section class="player player--2 none--display">
+      <section class="player player--2 hide">
         <div class="total-score">
           <!-- PLAYER NAME -->
           <h2 class="name" id="name--2">Player Two</h2>
@@ -171,13 +175,11 @@
         class="dice"
       />
       <!-- BUTTONS -->
-      <button class="btn btn--new none--display">
+      <button class="btn btn--new hide">
         <i class="fas fa-retweet"></i> NEW GAME
       </button>
-      <button class="btn btn--roll none--display">
-        <span>🎲</span> Roll Dice
-      </button>
-      <button class="btn btn--hold none--display">
+      <button class="btn btn--roll hide"><span>🎲</span> Roll Dice</button>
+      <button class="btn btn--hold hide">
         <i class="fas fa-archive"></i> Hold
       </button>
     </main>

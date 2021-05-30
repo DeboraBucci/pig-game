@@ -3,3 +3,52 @@ font-family: 'Josefin Sans', sans-serif;
 font-family: 'Mukta', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Quicksand', sans-serif; */
+
+h2 {
+  font-family: "Bebas Neue", cursive;
+  font-size: 3.5rem;
+}
+.total-score p {
+  font-family: "Mukta", sans-serif;
+  font-weight: lighter;
+  font-size: 5rem;
+}
+
+button {
+  font-size: 1.3rem;
+  font-weight: 900;
+}
+
+.current {
+  font-size: 2rem;
+  font-family: "Quicksand", sans-serif;
+}
+
+.player--active {
+  font-weight: 900;
+}
+
+h1 {
+  font-size: 3.5rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.return {
+  font-size: 3rem;
+}
+
+.rules {
+  font-family: "Josefin Sans", sans-serif;
+}
+
+h3 {
+  font-size: 2rem;
+}
+
+.rules p {
+  font-size: 1.2rem;
+}
+
+#close button {
+  font-size: 1.8rem;
+}

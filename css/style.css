@@ -1,6 +1,5 @@
 /* ELEMENT SELECTORRS
 ============================================================================== */
-
 * {
   padding: 0;
   margin: 0;
@@ -9,11 +8,9 @@
 
 body {
   height: 100vh;
-  background: linear-gradient(to top left, #753682 0%, #bf2e34 100%);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #313131;
 }
 
 main {
@@ -22,26 +19,47 @@ main {
   height: 600px;
   display: flex;
   justify-content: center;
-  background-color: rgba(218, 218, 218, 0.6);
   border-radius: 15px;
 }
 
-h2 {
-  font-family: "Bebas Neue", cursive;
-  font-size: 3.5rem;
+button {
+  border: transparent;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 10px;
 }
 
-.player {
-  transition: all 1s;
+/* HEADER
+============================================================================== */
+header {
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
-.total-score p {
-  font-family: "Mukta", sans-serif;
-  font-weight: lighter;
-  font-size: 5rem;
-  color: #c7365f;
+h1 {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-size: 100%;
 }
 
+/* BUTTONS */
+header button {
+  opacity: 0.7;
+  width: 350px;
+  margin: 20px auto;
+}
+
+header button p {
+  width: 50%;
+}
+
+/* MAIN
+============================================================================== */
 section {
   width: 100%;
   display: flex;
@@ -55,65 +73,20 @@ section * {
   opacity: 0.7;
 }
 
-img,
-.btn {
+img {
+  top: 160px;
   position: absolute;
 }
 
-button {
-  border: transparent;
-  border-radius: 25px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 10px;
-  font-size: 1.3rem;
-  font-weight: 900;
+.player {
+  transition: all 1s;
 }
 
 .btn {
-  box-shadow: 0 0 15px grey;
-  text-shadow: 3px 3px 10px grey;
   opacity: 0.9;
 }
 
-img {
-  top: 160px;
-}
-
-i {
-  color: #c7365f;
-}
-
-.btn--new {
-  position: absolute;
-  top: 50px;
-  width: 200px;
-}
-
-.btn--roll {
-  position: absolute;
-  top: 400px;
-  width: 160px;
-}
-
-.btn--hold {
-  position: absolute;
-  top: 470px;
-  width: 150px;
-}
-
-button:hover,
-button:active {
-  background: rgb(56, 56, 56);
-  color: white;
-  text-shadow: none;
-  box-shadow: none;
-  transform: scale(1.2);
-}
-
 .current {
-  background: #c7365f;
   margin: 0 auto;
   width: 200px;
   height: 130px;
@@ -122,15 +95,9 @@ button:active {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  color: white;
-  font-size: 2rem;
-  font-family: "Quicksand", sans-serif;
 }
 
 .player--active {
-  opacity: 1;
-  color: #313131;
-  background: rgba(255, 255, 255, 0.582);
   font-weight: 900;
   border-radius: 15px;
 }
@@ -139,101 +106,55 @@ button:active {
   opacity: 1;
 }
 
-/* ASIGNED BY JS ONLY */
-.hidden {
-  display: none;
-}
-
-.player--winner {
-  background: #2f2f2f;
-  opacity: 1;
-  color: #c7365f;
-  border-radius: 15px;
-  transform: scale(1.1);
-  transition: 1s;
-}
-
-.buttons--winner {
-  color: rgb(56, 56, 56);
-  background: rgb(77, 77, 77);
-  box-shadow: none;
-  text-shadow: none;
-}
-
-.buttons--winner:hover,
-.buttons--winner:active {f
-  color: rgb(56, 56, 56);
-  background: rgb(77, 77, 77);
-}
-
-/* INITIAL BUTTONS */
-header {
-  padding: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-
-h1 {
-  font-size: 3.5rem;
-  font-family: "Poppins", sans-serif;
-  background-color: transparent;
-  background-image: linear-gradient(120deg, #753682, #c7365f);
-
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-
-  background-size: 100%;
-}
-
-header button {
-  opacity: 0.7;
-  width: 350px;
-  margin: 20px auto;
-}
-
-header button p {
-  width: 50%;
-}
-
 .diff {
   width: 200px;
-  background: rgb(37, 37, 37);
-  color: #c7365f;
-}
-
-.return {
-  font-size: 3rem;
-  display: flex;
-  justify-content: flex-end;
-}
-
-.none--display,
-.hide {
-  display: none;
 }
 
 .rules {
-  background: #313131;
-  color: white;
   width: 500px;
   height: 350px;
   margin: 0 auto;
   padding: 30px;
   border-radius: 15px;
-  font-family: "Josefin Sans", sans-serif;
-}
-
-h3 {
-  font-size: 2rem;
 }
 
 .rules p {
   padding: 10px 0;
-  font-size: 1.2rem;
+}
+
+/* BUTTONS */
+.btn,
+.btn--new,
+.btn--roll,
+.btn--hold {
+  position: absolute;
+}
+
+.btn--new {
+  top: 50px;
+  width: 200px;
+}
+
+.btn--roll {
+  top: 400px;
+  width: 160px;
+}
+
+.btn--hold {
+  top: 470px;
+  width: 150px;
+}
+
+.return {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button:hover,
+button:active {
+  text-shadow: none;
+  box-shadow: none;
+  transform: scale(1.2);
 }
 
 .rules button {
@@ -251,26 +172,11 @@ h3 {
 #close button {
   display: flex;
   justify-content: flex-end;
-  font-size: 1.8rem;
-  background: transparent;
   margin: 0;
   transform: scale(1);
 }
 
-.close i:hover {
-  color: #ffffff;
-}
-
-.play:hover {
-  color: #313131;
-  background: #c7365f;
-}
-
-.btn--no:hover,
-.btn--no:active {
-  background: rgb(226, 226, 226);
-  color: #2f2f2f;
-  text-shadow: none;
-  box-shadow: none;
-  transform: scale(1);
+/* HIDE */
+.hide {
+  display: none !important;
 }

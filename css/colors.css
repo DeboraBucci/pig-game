@@ -1,0 +1,103 @@
+/* VARIABLES
+****************************************************************************************** */
+:root {
+  --mainOne: #753682;
+  --mainTwo: #bf2e34;
+  --color-1: #313131;
+  --color-2: #c7365f;
+  --color-3: #383838;
+  --color-4: #2f2f2f;
+  --color-5: #ffffff;
+}
+
+body {
+  background: linear-gradient(
+    to top left,
+    var(--mainOne) 0%,
+    var(--mainTwo) 100%
+  );
+  color: var(--color-1);
+}
+
+main {
+  background-color: #dadada99;
+}
+
+h1 {
+  background-color: transparent;
+  background-image: linear-gradient(120deg, var(--mainOne), var(--color-2));
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+/* BUTTONS */
+button:hover,
+button:active {
+  background: var(--color-3);
+  color: var(--color-5);
+}
+
+.btn {
+  box-shadow: 0 0 15px grey;
+  text-shadow: 3px 3px 10px grey;
+}
+
+.buttons--winner,
+.buttons--winner:hover,
+.buttons--winner:active {
+  color: var(--color-3);
+  background: #4d4d4d;
+}
+
+#close button {
+  background: transparent;
+}
+
+.play:hover {
+  color: var(--color-1);
+  background: var(--color-2);
+}
+
+/* ICONS */
+i {
+  color: var(--color-2);
+}
+
+.close i:hover {
+  color: var(--color-5);
+}
+
+.return i:hover,
+.return i:active {
+  color: var(--color-5);
+}
+
+/* asdasd */
+.total-score p {
+  color: var(--color-2);
+}
+
+.current {
+  background: var(--color-2);
+  color: var(--color-5);
+}
+
+.player--active {
+  color: var(--color-1);
+  background: #ffffff94;
+}
+
+.player--winner {
+  background: var(--color-4);
+  color: var(--color-2);
+}
+
+.diff {
+  background: #252525;
+  color: var(--color-2);
+}
+
+.rules {
+  background: var(--color-1);
+  color: var(--color-5);
+}

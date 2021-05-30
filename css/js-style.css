@@ -1,1 +1,18 @@
 /* THIS IS ALL STYLES APPLIED DIRECTLY IN SCRIPTS AND NOT THROUGH HTML */
+
+.player--winner {
+  opacity: 1;
+  border-radius: 15px;
+  transform: scale(1.1);
+  transition: 1s;
+}
+
+.buttons--winner {
+  box-shadow: none;
+  text-shadow: none;
+}
+
+.player--winner {
+  background: var(--color-4);
+  color: var(--color-2);
+}
