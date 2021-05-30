@@ -24,6 +24,7 @@ const hard = document.querySelector(".btn-3");
 
 const returnBtn = document.querySelector("#return");
 const returnBtn2 = document.querySelector("#return--2");
+const returnBtn3 = document.querySelector("#return--3");
 
 const rulesBtn = document.querySelector("#rules");
 const creditsBtn = document.querySelector("#credits");
@@ -294,3 +295,20 @@ const openCloseCredits = function () {
 creditsBtn.addEventListener("click", openCloseCredits);
 
 returnBtn2.addEventListener("click", openCloseCredits);
+
+// CREDITS
+//////////////////////////////////////////////////////////////////////////////////////
+const openCloseRules = function () {
+  creditsBtn.classList.toggle("hide");
+  startBtn.classList.toggle("hide");
+  rulesBtn.classList.toggle("hide");
+  title.classList.toggle("hide");
+
+  returnBtn3.classList.toggle("hide");
+
+  document.querySelector(".rules-div").classList.toggle("hide");
+};
+
+rulesBtn.addEventListener("click", openCloseRules);
+
+returnBtn3.addEventListener("click", openCloseRules);
