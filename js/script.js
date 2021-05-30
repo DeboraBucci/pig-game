@@ -41,7 +41,7 @@ const scores = ["", 0, 0];
 let playing, currentScore, activePlayer;
 let arrEasy, arrNormal, arrHard;
 let currLost, totalLost;
-let goal;
+let goal, difficulty;
 
 // HIDE OR SHOW FUNCTION -- ONLY FOR HEADER --
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -109,6 +109,7 @@ for (let p = 0; p < playBtns.length; p++) {
     arrHard = playBtns[p].classList.value.includes("hard-play");
 
     playing = true;
+    goalFunc();
 
     document.querySelector("header").classList.add("hide");
 
@@ -121,15 +122,16 @@ for (let p = 0; p < playBtns.length; p++) {
   });
 }
 
-// DIFFICULTY SELECTION
+// GOAL FUNC SELECTION
 //////////////////////////////////////////////////////////////////////////////////////
-const difficultyFunc = function () {
+const goalFunc = function () {
   if (arrEasy) {
     goal = 20;
   } else if (arrNormal) {
     goal = 50;
   } else if (arrHard) {
     goal = 100;
+    difficulty = "hard";
   }
   console.log(goal);
 };
@@ -202,8 +204,6 @@ const switchPlayers = function () {
 // ROLLING DICE
 //////////////////////////////////////////////////////////////////////////////////////
 btnRoll.addEventListener("click", function () {
-  difficultyFunc();
-
   if (playing) {
     // Generate random number between 1 and 6 :
     let dice = Math.trunc(Math.random() * 6) + 1;
@@ -220,8 +220,15 @@ btnRoll.addEventListener("click", function () {
       document.getElementById(`current--${activePlayer}`).textContent =
         currentScore;
     } else {
-      // Switch Players :
-      switchPlayers();
+      if (difficulty === "hard") {
+        document.getElementById(`score--${activePlayer}`).textContent =
+          Math.trunc(scores[activePlayer] / 2);
+        // Switch Players :
+        switchPlayers();
+      } else {
+        // Switch Players :
+        switchPlayers();
+      }
     }
   }
 });
