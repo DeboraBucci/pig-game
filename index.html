@@ -32,13 +32,13 @@
   </head>
   <body>
     <main>
-      <!-- STARTER LAYOUT 
+      <!-- INITIAL LAYOUT :
     ============================================================================== -->
       <header class="header">
-        <!-- TITLE : -->
+        <!-- TITLE -->
         <h1 class="title">WELCOME TO PIGGY GAME!</h1>
 
-        <!-- BUTTONS : -->
+        <!-- BUTTONS -->
         <div>
           <div>
             <!-- PLAYING BUTTONS -->
@@ -47,6 +47,7 @@
               <p>START PLAYING</p>
             </button>
 
+            <!-- EASY ------------------------------------------------------------->
             <!-- EASY BUTTON-->
             <button class="btn-1 diff hide">
               <i class="fas fa-smile-beam"></i> EASY
@@ -67,6 +68,7 @@
               <button class="play">PLAY</button>
             </div>
 
+            <!-- MEDIUM ----------------------------------------------------------->
             <!-- MEDIUM BUTTON -->
             <button class="btn-2 diff hide">
               <i class="fas fa-hard-hat"></i> NORMAL
@@ -87,6 +89,7 @@
               <button class="play">PLAY</button>
             </div>
 
+            <!-- HARD ------------------------------------------------------------>
             <!-- HARD BUTTON -->
             <button class="btn-3 diff hide">
               <i class="fas fa-skull"></i> HARD
@@ -108,7 +111,7 @@
             </div>
           </div>
 
-          <!-- REST OF THE BUTTONS -->
+          <!-- REST OF THE BUTTONS ---------------------------------------------->
           <button id="rules">
             <i class="fas fa-book"></i>
             <p>RULES</p>
@@ -118,7 +121,7 @@
             <p>CREDITS</p>
           </button>
 
-          <!-- RETURN BUTTON -->
+          <!-- RETURN BUTTON ---------------------------------------------------->
           <div class="hide return" id="return">
             <i class="fas fa-reply"></i>
           </div>
@@ -126,36 +129,48 @@
       </header>
 
       <!-- PLAYER ONE
-    ============================================================================== -->
+      ============================================================================== -->
       <section class="player player--1 player--active none--display">
         <div class="total-score">
+          <!-- PLAYER NAME -->
           <h2 class="name" id="name--1">Player One</h2>
+          <!-- PLAYER SCORE -->
           <p class="score" id="score--1">0</p>
         </div>
-
+        <!-- CURRENT SCORE  -->
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--1">0</p>
         </div>
       </section>
+
+      <!-- PLAYER TWO
+      ============================================================================== -->
       <section class="player player--2 none--display">
         <div class="total-score">
+          <!-- PLAYER NAME -->
           <h2 class="name" id="name--2">Player Two</h2>
+          <!-- PLAYER SCORE -->
           <p class="score" id="score--2">0</p>
         </div>
-
+        <!-- CURRENT SCORE -->
         <div class="current">
           <p class="current-label">Current</p>
           <p class="current-score" id="current--2">0</p>
         </div>
       </section>
 
+      <!-- CENTER CONTENT IN GAME 
+      ============================================================================== -->
+
+      <!-- DICE IMAGE -->
       <img
         width="100px"
         src="./images/dice-1.png"
         alt="Playing dice"
         class="dice"
       />
+      <!-- BUTTONS -->
       <button class="btn btn--new none--display">
         <i class="fas fa-retweet"></i> NEW GAME
       </button>

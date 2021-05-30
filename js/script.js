@@ -50,7 +50,10 @@ const hideShow = function () {
 };
 
 // START BUTTON
-document.querySelector(".start").addEventListener("click", hideShow);
+document.querySelector(".start").addEventListener("click", function () {
+  hideShow();
+  startBtn.classList.add(".btn--no");
+});
 
 // RETURN BUTTON :
 document.querySelector("#return").addEventListener("click", hideShow);

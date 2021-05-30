@@ -1,8 +1,5 @@
-/* font-family: 'Bebas Neue', cursive;
-font-family: 'Josefin Sans', sans-serif;
-font-family: 'Mukta', sans-serif;
-font-family: 'Poppins', sans-serif;
-font-family: 'Quicksand', sans-serif; */
+/* ELEMENT SELECTORRS
+============================================================================== */
 
 * {
   padding: 0;
@@ -164,8 +161,7 @@ button:active {
 }
 
 .buttons--winner:hover,
-.buttons--winner:active {
-  transform: none;
+.buttons--winner:active {f
   color: rgb(56, 56, 56);
   background: rgb(77, 77, 77);
 }
@@ -268,4 +264,13 @@ h3 {
 .play:hover {
   color: #313131;
   background: #c7365f;
+}
+
+.btn--no:hover,
+.btn--no:active {
+  background: rgb(226, 226, 226);
+  color: #2f2f2f;
+  text-shadow: none;
+  box-shadow: none;
+  transform: scale(1);
 }
