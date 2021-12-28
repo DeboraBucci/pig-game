@@ -1,0 +1,63 @@
+@media (max-width: 500px) {
+  main,
+  .player--active,
+  .rules {
+    border-radius: 0;
+  }
+
+  main {
+    position: relative;
+  }
+
+  .player--1,
+  .player--2 {
+    height: 600px;
+    opacity: 0;
+  }
+
+  .player--active {
+    position: absolute;
+    opacity: 1;
+  }
+
+  .player--1 .player--active {
+    right: 100px;
+    top: 0;
+  }
+
+  .player--2 .player--active {
+    left: 100px;
+    top: 0;
+  }
+
+  .btn--home,
+  .btn--new {
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+
+  .btn--home {
+    position: absolute;
+    top: -70px;
+    right: 260px;
+  }
+
+  .btn--new {
+    position: absolute;
+    top: -70px;
+    left: 260px;
+  }
+
+  .btn--roll {
+    position: absolute;
+    top: 630px;
+    left: 260px;
+  }
+
+  .btn--hold {
+    position: absolute;
+    top: 630px;
+    right: 260px;
+  }
+}
