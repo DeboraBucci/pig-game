@@ -346,5 +346,5 @@ btnHome.addEventListener("click", function () {
   creditsBtn.classList.remove("hide");
   diceEl.classList.add("hide");
 
-  title.textContent = "WELCOME TO PIGGY GAME!";
+  title.textContent = "WELCOME to Mr. Piggston!";
 });
