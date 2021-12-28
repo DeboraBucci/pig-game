@@ -9,6 +9,13 @@
     position: relative;
   }
 
+  .dice {
+    width: 50px;
+    position: absolute;
+    top: 35px;
+    box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+  }
+
   .player--1,
   .player--2 {
     height: 600px;
