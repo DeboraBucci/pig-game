@@ -24,7 +24,7 @@ main {
 
 button {
   border: transparent;
-  border-radius: 25px;
+  border-radius: 15px;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
@@ -161,7 +161,7 @@ button:hover,
 button:active {
   text-shadow: none;
   box-shadow: none;
-  transform: scale(1.2);
+  transform: scale(1.1);
 }
 
 .rules button {
